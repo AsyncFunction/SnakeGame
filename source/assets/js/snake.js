@@ -188,35 +188,39 @@ var jsSnake = jsSnake || {};
 
     function showGameOverScreen() {
         clearScreen();
-        ctx.font = "16px 'Cascadia Code', monospace";
+        ctx.font = "14px 'Cascadia Code', monospace";
         ctx.fillStyle = "white";
-        ctx.fillText(" ▄████   ▄▄▄      ███▄ ▄███▓ ▓█████     ▒█████   ██▒   █▓▓█████  ██▀███", 50, 100);
-        ctx.fillText(" ██▒ ▀█▒▒████▄    ▓██▒▀█▀ ██▒▓█   ▀    ▒██▒  ██▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒", 50, 120);
-        ctx.fillText("▒██░▄▄▄░▒██  ▀█▄  ▓██    ▓██░▒███      ▒██░  ██▒ ▓██  █▒░▒███   ▓██ ░▄█ ▒", 50, 140);
-        ctx.fillText("░▓█  ██▓░██▄▄▄▄██ ▒██    ▒██ ▒▓█  ▄    ▒██   ██░  ▒██ █░░▒▓█  ▄ ▒██▀▀█▄", 50, 160);
-        ctx.fillText("░▒▓███▀▒ ▓█   ▓██▒▒██▒   ░██▒░▒████▒   ░ ████▓▒░   ▒▀█░  ░▒████▒░██▓ ▒██▒", 50, 180);
-        ctx.fillText("Score: " + score, 340, 220);
-        ctx.fillText("Press Enter to play again.", 270, 260);
+        ctx.fillText(" ▄████   ▄▄▄      ███▄ ▄███▓ ▓█████     ▒█████   ██▒   █▓▓█████  ██▀███", canvas.width / 2 - 300, 100);
+        ctx.fillText(" ██▒ ▀█▒▒████▄    ▓██▒▀█▀ ██▒▓█   ▀    ▒██▒  ██▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒", canvas.width / 2 - 300, 115);
+        ctx.fillText("▒██░▄▄▄░▒██  ▀█▄  ▓██    ▓██░▒███      ▒██░  ██▒ ▓██  █▒░▒███   ▓██ ░▄█ ▒", canvas.width / 2 - 300, 130);
+        ctx.fillText("░▓█  ██▓░██▄▄▄▄██ ▒██    ▒██ ▒▓█  ▄    ▒██   ██░  ▒██ █░░▒▓█  ▄ ▒██▀▀█▄", canvas.width / 2 - 300, 145);
+        ctx.fillText("░▒▓███▀▒ ▓█   ▓██▒▒██▒   ░██▒░▒████▒   ░ ████▓▒░   ▒▀█░  ░▒████▒░██▓ ▒██▒", canvas.width / 2 - 300, 160);
+        ctx.fillText(" ░▒   ▒  ▒▒   ▓▒█░░ ▒░   ░  ░░░ ▒░ ░   ░ ▒░▒░▒░    ░ ▐░  ░░ ▒░ ░░ ▒▓ ░▒▓░", canvas.width / 2 - 300, 175);
+        ctx.fillText("  ░   ░   ▒   ▒▒ ░░  ░      ░ ░ ░  ░     ░ ▒ ▒░    ░ ░░   ░ ░  ░  ░▒ ░ ▒░", canvas.width / 2 - 300, 190);
+        ctx.fillText("░ ░   ░   ░   ▒   ░      ░      ░      ░ ░ ░ ▒       ░░     ░     ░░   ░ ", canvas.width / 2 - 300, 205);
+        ctx.fillText("      ░       ░  ░       ░      ░  ░       ░ ░        ░     ░  ░   ░     ", canvas.width / 2 - 300, 220);
+        ctx.fillText("Score: " + score, canvas.width / 2 - 30, 260);
+        ctx.fillText("Press Enter to play again.", canvas.width / 2 - 100, 280);
     }
 
     function showInitialMessage() {
         clearScreen();
         ctx.fillStyle = "white";
-        ctx.font = "14px 'Cascadia Code', monospace"; 
+        ctx.font = "14px 'Cascadia Code', monospace";
         ctx.fillStyle = "white";
-        ctx.fillText(" ██████   ███▄    █  ▄▄▄       ██ ▄█▀▓█████ ", canvas.width / 4, canvas.height / 2 - 80);
-        ctx.fillText("▒██    ▒  ██ ▀█   █ ▒████▄     ██▄█▒ ▓█   ▀ ", canvas.width / 4, canvas.height / 2 - 60);
-        ctx.fillText("░ ▓██▄   ▓██  ▀█ ██▒▒██  ▀█▄  ▓███▄░ ▒███   ", canvas.width / 4, canvas.height / 2 - 40);
-        ctx.fillText("  ▒   ██▒▓██▒  ▐▌██▒░██▄▄▄▄██ ▓██ █▄ ▒██  ▄ ", canvas.width / 4, canvas.height / 2 - 20);
-        ctx.fillText("▒██████▒▒▒██░   ▓██░ ▓█   ▓██▒▒██▒ █▄░█████▒", canvas.width / 4, canvas.height / 2);
-        ctx.fillText("▒ ▒▓▒ ▒ ░░ ▒░   ▒ ▒  ▒▒   ▓▒█░▒ ▒▒ ▓▒░░ ▒░ ░", canvas.width / 4, canvas.height / 2 + 20);
-        ctx.fillText("░ ░▒  ░ ░░ ░░   ░ ▒░  ▒   ▒▒ ░░ ░▒ ▒░ ░ ░  ░", canvas.width / 4, canvas.height / 2 + 40);
-        ctx.fillText("░  ░  ░     ░   ░ ░   ░   ▒   ░ ░░ ░    ░   ", canvas.width / 4, canvas.height / 2 + 60);
-        ctx.fillText("      ░           ░       ░  ░░  ░      ░  ░", canvas.width / 4, canvas.height / 2 + 80);
+        ctx.fillText(" ██████   ███▄    █  ▄▄▄       ██ ▄█▀▓█████ ", canvas.width / 2 - 180, 100);
+        ctx.fillText("▒██    ▒  ██ ▀█   █ ▒████▄     ██▄█▒ ▓█   ▀ ", canvas.width / 2 - 180, 115);
+        ctx.fillText("░ ▓██▄   ▓██  ▀█ ██▒▒██  ▀█▄  ▓███▄░ ▒███   ", canvas.width / 2 - 180, 130);
+        ctx.fillText("  ▒   ██▒▓██▒  ▐▌██▒░██▄▄▄▄██ ▓██ █▄ ▒██  ▄ ", canvas.width / 2 - 180, 145);
+        ctx.fillText("▒██████▒▒▒██░   ▓██░ ▓█   ▓██▒▒██▒ █▄░█████▒", canvas.width / 2 - 180, 160);
+        ctx.fillText("▒ ▒▓▒ ▒ ░░ ▒░   ▒ ▒  ▒▒   ▓▒█░▒ ▒▒ ▓▒░░ ▒░ ░", canvas.width / 2 - 180, 175);
+        ctx.fillText("░ ░▒  ░ ░░ ░░   ░ ▒░  ▒   ▒▒ ░░ ░▒ ▒░ ░ ░  ░", canvas.width / 2 - 180, 190);
+        ctx.fillText("░  ░  ░     ░   ░ ░   ░   ▒   ░ ░░ ░    ░   ", canvas.width / 2 - 180, 205);
+        ctx.fillText("      ░           ░       ░  ░░  ░      ░  ░", canvas.width / 2 - 180, 220);
         ctx.font = "20px Arial";
-        ctx.fillText("Press Enter to play. Use arrow keys.", canvas.width / 2 - 180, canvas.height / 2 + 140);
+        ctx.fillText("Press Enter to play. Use arrow keys.", canvas.width / 2 - 160, 250);
         ctx.font = "10px Arial";
-        ctx.fillText("v1.0.1 Developed by Paul Anderson, 2025.", canvas.width / 2 - 100, canvas.height / 2 + 165);
+        ctx.fillText("v1.0.1 Developed by Paul Anderson, 2025.", canvas.width / 2 - 100, 270);
     }
 
 })(jsSnake);
